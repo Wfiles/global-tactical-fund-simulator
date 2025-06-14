@@ -147,7 +147,7 @@ pip install -r requirements.txt
 If you build upon this work, please cite the accompanying report:
 
 ```text
-Jallot, W., Abbassi, N., Le Dur, A., & Simonnet, L. (2025). International Portfolio Diversification and Dynamic Asset Allocation. FIN‑405 Investments Project, EPFL.
+Jallot, W., Abbassi, N., Garin, A., & Simonnet, L. (2025). International Portfolio Diversification and Dynamic Asset Allocation. FIN‑405 Investments Project, EPFL.
 ```
 
 ---
