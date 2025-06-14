@@ -24,12 +24,12 @@
 
 ## Project Overview
 
-This repository accompanies the **FIN‑405 – Investments** group project (Spring 2025, EPFL). It demonstrates how a U.S.‑based investor can:
+This repository accompanies the **FIN‑405 - Investments** group project (Spring 2025, EPFL). It demonstrates how a U.S.‑based investor can:
 
 * **Quantify** the benefits of international equity & currency diversification.
-* **Design** dynamic long–short overlay strategies driven by well‑documented risk premia (momentum, long‑term reversal, currency carry, dollar factor).
+* **Design** dynamic long-short overlay strategies driven by well‑documented risk premia (momentum, long‑term reversal, currency carry, dollar factor).
 * **Blend** the base diversification portfolio with tactical overlays to reach a target risk level and maximise the **risk‑adjusted return**.
-* **Benchmark** the resulting fund against classic factor models (CAPM, Fama–French 5) and evaluate statistical significance.
+* **Benchmark** the resulting fund against classic factor models (CAPM, Fama-French 5) and evaluate statistical significance.
 
 All results reported in the companion paper `project_report.pdf` are fully reproducible from this repository.
 
@@ -79,14 +79,14 @@ $ jupyter notebook project.ipynb
 2. **Dynamic Overlay Strategies**
    Implement and back‑test:
 
-   * **Momentum (MOM)** – 11‑month look‑back minus 1‑month skip.
-   * **Reversal (REV)** – 5‑year lagged performance.
-   * **Currency Carry (CARRY)** – 3‑month interest‑rate differential.
-   * **Dollar (DOLLAR)** – Long USD vs. equally‑weighted foreign FX basket.
+   * **Momentum (MOM)** - 11‑month look‑back minus 1‑month skip.
+   * **Reversal (REV)** - 5‑year lagged performance.
+   * **Currency Carry (CARRY)** - 3‑month interest‑rate differential.
+   * **Dollar (DOLLAR)** - Long USD vs. equally‑weighted foreign FX basket.
 3. **Optimal Fund Allocation**
    Combine a **T‑Bill + Diversification (DIV)** core with the overlay composite (STRAT) to maintain 15 % annualised volatility using risk‑parity **and** mean‑variance optimisation.
 4. **Performance Attribution**
-   Diagnose alpha & betas via OLS on the Fama–French 5 factors; discuss consistency with EMH, CAPM & APT.
+   Diagnose alpha & betas via OLS on the Fama-French 5 factors; discuss consistency with EMH, CAPM & APT.
 
 ---
 
@@ -94,11 +94,11 @@ $ jupyter notebook project.ipynb
 
 | Asset Class     | Provider                         | Series                                                                       |
 | --------------- | -------------------------------- | ---------------------------------------------------------------------------- |
-| Equity Indices  | **WRDS – Monthly World Indices** | Australia, France, Germany, Japan, Switzerland, UK, US (CRSP value‑weighted) |
+| Equity Indices  | **WRDS - Monthly World Indices** | Australia, France, Germany, Japan, Switzerland, UK, US (CRSP value‑weighted) |
 | Risk‑Free Rates | **WRDS** & **FRED**              | 1‑month T‑Bill (US), 3‑month interbank rates (AUD, EUR, JPY, CHF, GBP)       |
 | FX Rates        | **FRED**                         | AUD/USD, EUR/USD, JPY/USD, CHF/USD, GBP/USD                                  |
 
-All time series are aligned to **month‑end** and span **April 2002 – December 2024**.
+All time series are aligned to **month‑end** and span **April 2002 - December 2024**.
 
 ---
 
@@ -110,7 +110,7 @@ All time series are aligned to **month‑end** and span **April 2002 – Dec
 * **Returns in USD:** Convert local equity returns via spot FX; compute hedged returns using the covered‑interest‑parity framework.
 * **Risk‑Parity:** 60‑month rolling volatility estimates to derive weights.
 * **Mean‑Variance:** 60‑month rolling µ and Σ; γ = 1.
-* **Overlay Signals:** Cross‑sectional ranking; dollar‑neutral long–short construction with scaling `Z` ensuring +1 / −1 notionals.
+* **Overlay Signals:** Cross‑sectional ranking; dollar‑neutral long-short construction with scaling `Z` ensuring +1 / −1 notionals.
 * **Fund Optimisation:** Solve for weights `b` and `c` in $R_{FUND}=R_{TBill}+b(R_{DIV}-R_{TBill})+c R_{STRAT}$ s.t. annual σ ≈ 15 %.
 * **Statistical Tests:** Sharpe ratios, t‑tests on mean returns, regression alphas/betas.
 
